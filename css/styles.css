@@ -1,1 +1,87 @@
 /* developer styles go here */
+:root {
+    --orange: #f07847;
+    --green: #199f6b;
+    --blue: #007ea7;
+
+    font-size: 62.5%;
+}
+
+body {
+    font-family: sans-serif;
+    font-size: 1.6rem;
+    background-color: #feebdd;
+    text-align: center;
+}
+
+section {
+    margin: 4.8rem auto;
+    max-width: 70rem;
+    border: 0.1rem solid #6e3d08;
+    padding: 1rem;
+}
+
+h2 {
+    margin-bottom: 2.4rem;
+}
+
+/** create and size the boxes **/
+.box {
+    width: 10rem;
+    height: 10rem;
+    border: 1px solid #111;
+}
+
+.box.orange { background: var(--orange); }
+.box.green { background: var(--green); }
+.box.blue { background: var(--blue); }
+
+
+/** relative **/
+/** keeps all of your elements within the document flow **/
+
+.relative .box.orange {
+    position: relative;
+    bottom: 3rem;
+}
+
+.relative .box.green {
+    position: relative;
+    top: 2rem;
+    /** to remove spacing created by relative position (moving elements around using relative positioning) You need to use a negative or positive margin **/
+    margin-top: -2rem; /** brings the element back to its original spot**/
+}
+
+.relative .box.blue {
+    position: relative;
+    left: 5rem;
+}
+
+/** absolute **/
+/** absolute removes the element out the work flow **/
+.absolute .box.orange {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/** absolute positioned items within a relative parent **/
+
+.relative2 {
+    position: relative;
+}
+
+.relative2 .box.green {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+/** fixed - similar to absolute as the elements are remove from the document flow **/
+/** as a note - you can have fixed containers with static elements within them **/
+/* for example .fixed {} **/
+.fixed .box.blue{
+    position: fixed;
+    left: 0;
+    top: 50%;
+}
